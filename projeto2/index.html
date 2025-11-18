@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prontuário Médico - Alice Henriques</title>
+    
+    <link rel="stylesheet" href="estilo.css">
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <main class="main-content">
+            <header class="header">
+                <div class="patient-tags">
+                    <span> </span>
+                </div>
+                <div class="header-right">
+                    <span class="material-icons">search</span>
+                    <span class="material-icons">notifications</span>
+                    <span class="material-icons">settings</span>
+                    
+                </div>
+            </header>
+            
+            <div class="content-area">
+                <div class="patient-header">
+                    <div class="patient-info-left">
+                        <img src="https://via.placeholder.com/80x80" alt="Patient Avatar" class="patient-avatar">
+                        <div class="patient-details">
+                            <h2>Sarah Akilla </h2>
+                            <p>UNIMED 123</p>
+                            <p>- (00)00000-0000</p>
+                            <p>25 anos</p>
+                        </div>
+                    </div>
+                    
+                    </div>
+
+                <nav class="patient-tabs">
+                    <button class="tab-button active" data-tab="info-pessoais">Informações Pessoais</button>
+                    <button class="tab-button" data-tab="prescricoes">Prescrições</button>
+                    
+                </nav>
+
+                <div class="tabs-content-container">
+
+                    <div id="info-pessoais" class="tab-content active">
+                        <h2>Dados Pessoais e Contato</h2>
+                        <form id="form-pessoais" class="personal-form">
+                            
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label for="nome_completo">Nome Completo</label>
+                                    <input type="text" id="nome_completo" class="form-control" value="Sarah Akilla" required>
+                                </div>
+                                <div class="form-group-half">
+                                    <label for="cpf">CPF</label>
+                                    <input type="text" id="cpf" class="form-control" value="000.000.000-00" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label for="data_nasc">Data de Nascimento</label>
+                                    <input type="date" id="data_nasc" class="form-control" value="1998-10-25" required>
+                                </div>
+                                <div class="form-group-half">
+                                    <label for="genero">Gênero</label>
+                                    <select id="genero" class="form-control">
+                                        <option value="feminino" selected>Feminino</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" id="email" class="form-control" value="sarah.akilla@exemplo.com">
+                                </div>
+                                <div class="form-group-half">
+                                    <label for="telefone">Telefone</label>
+                                    <input type="text" id="telefone" class="form-control" value="(00)00000-0000">
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <h2>Endereço</h2>
+
+                            <div class="form-row">
+                                <div class="form-group-quarter">
+                                    <label for="cep">CEP</label>
+                                    <input type="text" id="cep" class="form-control" placeholder="00000-000">
+                                </div>
+                                <div class="form-group-three-quarters">
+                                    <label for="endereco">Endereço</label>
+                                    <input type="text" id="endereco" class="form-control" placeholder="Rua, Avenida, etc.">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group-quarter">
+                                    <label for="numero">Número</label>
+                                    <input type="text" id="numero" class="form-control">
+                                </div>
+                                <div class="form-group-half">
+                                    <label for="bairro">Bairro</label>
+                                    <input type="text" id="bairro" class="form-control">
+                                </div>
+                                <div class="form-group-quarter">
+                                    <label for="cidade">Cidade</label>
+                                    <input type="text" id="cidade" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-orange"><span class="material-icons">save</span> Atualizar Dados</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="prescricoes" class="tab-content">
+                        <h2>Nova Prescrição e Anamnese Detalhada</h2>
+                        
+                        <form id="form-prescricao">
+                            
+                            <h3>4. História Pessoal e Clínica</h3>
+
+                            <div class="form-group">
+                                <label for="tempo_hormonio">Tempo de uso de hormonioterapia:</label>
+                                <input type="text" id="tempo_hormonio" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tipo de hormonioterapia:</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="tipo_hormonio" value="estrogenica"> Estrogênica</label>
+                                    <label><input type="checkbox" name="tipo_hormonio" value="androgenica"> Androgênica</label>
+                                    <label><input type="checkbox" name="tipo_hormonio" value="bloqueadores"> Bloqueadores hormonais</label>
+                                    <label>Outros: <input type="text" class="form-control-inline"></label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Via de administração:</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="via_adm" value="oral"> Oral</label>
+                                    <label><input type="checkbox" name="via_adm" value="im"> IM</label>
+                                    <label><input type="checkbox" name="via_adm" value="transdermica"> Transdérmica</label>
+                                    <label><input type="checkbox" name="via_adm" value="sc"> SC</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dose_atual">Dose atual:</label>
+                                <input type="text" id="dose_atual" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Queixas relacionadas:</label>
+                                <div class="checkbox-group checkbox-multi-row">
+                                    <label><input type="checkbox" name="queixas" value="acne"> Acne</label>
+                                    <label><input type="checkbox" name="queixas" value="queda_cabelo"> Queda de cabelo</label>
+                                    <label><input type="checkbox" name="queixas" value="retencao"> Retenção hídrica</label>
+                                    <label><input type="checkbox" name="queixas" value="humor"> Alterações de humor</label>
+                                    <label><input type="checkbox" name="queixas" value="libido"> Libido alterada</label>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label>Cirurgia de redesignação sexual:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="crs" value="sim_tipo"> Sim – tipo: <input type="text" class="form-control-inline"></label>
+                                        <label><input type="radio" name="crs" value="nao"> Não</label>
+                                    </div>
+                                    <div class="radio-group-intentacao" style="margin-left: 20px;">
+                                        <label>Intenção futura: 
+                                            <label><input type="radio" name="intencao_futura" value="sim"> Sim</label>
+                                            <label><input type="radio" name="intencao_futura" value="nao"> Não</label>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group-half">
+                                    <label>Procedimentos prévios:</label>
+                                    <div class="checkbox-group checkbox-multi-row">
+                                        <label><input type="checkbox" name="procedimentos" value="mastectomia"> Mastectomia</label>
+                                        <label><input type="checkbox" name="procedimentos" value="mamoplastia"> Mamoplastia</label>
+                                        <label><input type="checkbox" name="procedimentos" value="histerectomia"> Histerectomia</label>
+                                        <label><input type="checkbox" name="procedimentos" value="ooforectomia"> Ooforectomia</label>
+                                        <label><input type="checkbox" name="procedimentos" value="penectomia"> Penectomia</label>
+                                        <label><input type="checkbox" name="procedimentos" value="vaginoplastia"> Vaginoplastia</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Doenças associadas:</label>
+                                <div class="checkbox-group checkbox-multi-row">
+                                    <label><input type="checkbox" name="doencas" value="hepatopatia"> Hepatopatia</label>
+                                    <label><input type="checkbox" name="doencas" value="trombose"> Trombose</label>
+                                    <label><input type="checkbox" name="doencas" value="hipertensao"> Hipertensão</label>
+                                    <label><input type="checkbox" name="doencas" value="diabetes"> Diabetes</label>
+                                    <label><input type="checkbox" name="doencas" value="dislipidemia"> Dislipidemia</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="historico_familiar">Histórico familiar:</label>
+                                <input type="text" id="historico_familiar" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="alergias">Alergias:</label>
+                                <input type="text" id="alergias" class="form-control">
+                            </div>
+                            
+                            
+
+                            <h3 style="margin-top: 30px;">9. Exame Físico Geral</h3>
+
+                            <div class="form-row form-inline-group">
+                                <label>Sinais vitais:</label>
+                                <label>PA: <input type="text" class="form-control-inline" style="width: 50px;"> / <input type="text" class="form-control-inline" style="width: 50px;"> mmHg</label>
+                                <label>FC: <input type="text" class="form-control-inline" style="width: 50px;"> bpm</label>
+                                <label>FR: <input type="text" class="form-control-inline" style="width: 50px;"> irpm</label>
+                                <label>Temp: <input type="text" class="form-control-inline" style="width: 50px;"> °C</label>
+                                <label>SpO₂: <input type="text" class="form-control-inline" style="width: 50px;"> %</label>
+                                <label>Peso: <input type="text" class="form-control-inline" style="width: 50px;"> kg</label>
+                                <label>Altura: <input type="text" class="form-control-inline" style="width: 50px;"> m</label>
+                                <label>IMC: <input type="text" class="form-control-inline" style="width: 50px;"></label>
+                            </div>
+
+                            <h4>Pele e pelos</h4>
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label>Distribuição:</label>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" name="distribuicao_pelo" value="feminina"> Feminina</label>
+                                        <label><input type="checkbox" name="distribuicao_pelo" value="masculina"> Masculina</label>
+                                        <label><input type="checkbox" name="distribuicao_pelo" value="mista"> Mista</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-half">
+                                    <label>Acne:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="acne_s_n" value="sim"> Sim</label>
+                                        <label><input type="radio" name="acne_s_n" value="nao"> Não</label>
+                                        <label for="acne_regiao">Região: <input type="text" id="acne_regiao" class="form-control-inline"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group-third">
+                                    <label>Oleosidade:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="oleosidade" value="normal"> Normal</label>
+                                        <label><input type="radio" name="oleosidade" value="aumentada"> Aumentada</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-third">
+                                    <label>Queda capilar:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="queda_capilar" value="sim"> Sim</label>
+                                        <label><input type="radio" name="queda_capilar" value="nao"> Não</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-third">
+                                    <label for="estrias">Estrias / pigmentações:</label>
+                                    <input type="text" id="estrias" class="form-control">
+                                </div>
+                            </div>
+                            <p class="small-note">Área para inserção de foto ou marcação digital (queda capilar, acne, alterações cutâneas)</p>
+
+                            <h4 style="margin-top: 20px;">Sistema cardiovascular</h4>
+                            <div class="form-row">
+                                <div class="form-group-third">
+                                    <label>Pulsos periféricos:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="pulsos" value="palpaveis"> Palpáveis</label>
+                                        <label><input type="radio" name="pulsos" value="diminuidos"> Diminuídos</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-third">
+                                    <label>Edema:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="edema" value="sim"> Sim</label>
+                                        <label><input type="radio" name="edema" value="nao"> Não</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-third">
+                                    <label>Sinais de aterosclerose:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="aterosclerose" value="sim"> Sim</label>
+                                        <label><input type="radio" name="aterosclerose" value="nao"> Não</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+                            <h4 style="margin-top: 20px;">Sistema respiratório</h4>
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label>Murmúrio vesicular:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="murmurio" value="presente"> Presente</label>
+                                        <label><input type="radio" name="murmurio" value="diminuido"> Diminuído</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-half">
+                                    <label>Dispneia:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="dispneia" value="sim"> Sim</label>
+                                        <label><input type="radio" name="dispneia" value="nao"> Não</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h4 style="margin-top: 20px;">Sistema digestivo / hepático</h4>
+                            <div class="form-row">
+                                <div class="form-group-third">
+                                    <label>Fígado palpável:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="figado" value="sim"> Sim</label>
+                                        <label><input type="radio" name="figado" value="nao"> Não</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-third">
+                                    <label>Náuseas/vômitos:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="nauseas" value="sim"> Sim</label>
+                                        <label><input type="radio" name="nauseas" value="nao"> Não</label>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <h4 style="margin-top: 20px;">Sistema geniturinário</h4>
+                            <div class="form-row">
+                                <div class="form-group-full">
+                                    <label>Tipo anatômico:</label>
+                                    <div class="checkbox-group checkbox-multi-row">
+                                        <label><input type="checkbox" name="tipo_anatomico" value="penis"> Pênis</label>
+                                        <label><input type="checkbox" name="tipo_anatomico" value="vagina"> Vagina neoconstruída</label>
+                                        <label><input type="checkbox" name="tipo_anatomico" value="neofalo"> Neofalo</label>
+                                        <label><input type="checkbox" name="tipo_anatomico" value="nao_declarado"> Não declarado</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group-half">
+                                    <label>Corrimento / prurido / dor:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="corrimento" value="sim"> Sim</label>
+                                        <label><input type="radio" name="corrimento" value="nao"> Não</label>
+                                    </div>
+                                </div>
+                                <div class="form-group-half">
+                                    <label>Micção:</label>
+                                    <div class="radio-group">
+                                        <label><input type="radio" name="miccao" value="normal"> Normal</label>
+                                        <label><input type="radio" name="miccao" value="alterada"> Alterada</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h3 style="margin-top: 30px;">Detalhes da Prescrição</h3>
+                            <div class="form-group">
+                                <label for="prescricao_texto">Prescrição Detalhada:</label>
+                                <textarea id="prescricao_texto" class="form-control" rows="5" placeholder="Ex: Dipirona 500mg, 1 comprimido a cada 6 horas se dor..."></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-green"><span class="material-icons">save</span> Salvar Prescrição Completa</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="acompanhamento" class="tab-content">
+                        <h2>Acompanhamento da Paciente</h2>
+                        <p>Gráficos e anotações sobre a evolução do tratamento...</p>
+                    </div>
+                    <div id="financeiro" class="tab-content">
+                        <h2>Financeiro</h2>
+                        <p>Histórico de pagamentos e débitos...</p>
+                    </div>
+                    <div id="orcamentos" class="tab-content">
+                        <h2>Orçamentos Realizados</h2>
+                        <p>Lista de orçamentos de procedimentos...</p>
+                    </div>
+
+                </div> 
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3></h3>
+                        <p>Consultas</p>
+                        <button id="novaConsultaBtn" class="btn btn-green"><span class="material-icons">add</span> Nova consulta</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2</h3>
+                        <p>Exames</p>
+                        <button class="btn btn-green"><span class="material-icons">add</span> Novo Exame</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>0</h3>
+                        <p>Vacinas</p>
+                        <button class="btn btn-green"><span class="material-icons">add</span> Nova Vacinação</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>2</h3>
+                        <p>Cirurgias</p>
+                        <button class="btn btn-green"><span class="material-icons">add</span> Nova Cirurgia</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>47</h3>
+                        <p>Procedimentos</p>
+                        <button class="btn btn-orange"><span class="material-icons">redo</span> Voltar ao Procedimento</button>
+                    </div>
+                    <div class="stat-card">
+                        <h3>0</h3>
+                        <p>Cancelados</p>
+                    </div>
+                </div>
+
+            </div> </main>
+    </div> </body>
+</html>

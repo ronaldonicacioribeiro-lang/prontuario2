@@ -1,0 +1,385 @@
+/* --- Estilos Globais --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Remove espaços em branco estranhos no HTML */
+body > .container {
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-content {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+}
+
+.material-icons {
+    vertical-align: middle;
+    font-size: 1.25em;
+    line-height: 1;
+}
+
+/* --- Header --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header-right > .material-icons {
+    color: #555;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    border-radius: 50%;
+}
+
+/* --- Área de Conteúdo Principal --- */
+.content-area {
+    padding: 25px;
+}
+
+/* --- Cabeçalho do Paciente --- */
+.patient-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.patient-info-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.patient-avatar {
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+.patient-details h2 {
+    margin: 0 0 5px 0;
+    color: #000;
+}
+
+.patient-details p {
+    margin: 4px 0;
+    color: #555;
+}
+
+.patient-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* --- Botões --- */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    transition: background-color 0.2s;
+}
+.btn .material-icons {
+    font-size: 1.1em;
+}
+
+.btn-orange { background-color: #f39c12; }
+.btn-info { background-color: #3498db; }
+.btn-multiclinic { background-color: #9b59b6; }
+.btn-green { background-color: #2ecc71; }
+
+.btn-orange:hover { background-color: #e67e22; }
+.btn-info:hover { background-color: #2980b9; }
+.btn-multiclinic:hover { background-color: #8e44ad; }
+.btn-green:hover { background-color: #27ae60; }
+
+
+/* --- Sistema de Abas --- */
+.patient-tabs {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+    margin-top: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #777;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px; /* Alinha com a borda principal */
+}
+
+.tab-button:hover {
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.tab-button.active {
+    border-bottom: 3px solid #3498db; /* Azul */
+    color: #3498db;
+    font-weight: 600;
+}
+
+/* --- Conteúdo das Abas (REGRA ESSENCIAL) --- */
+.tab-content {
+    display: none; /* Esconde todo conteúdo de aba por padrão */
+    padding: 20px 5px; /* Espaçamento vertical */
+}
+
+.tab-content.active {
+    display: block; /* Mostra APENAS o conteúdo da aba ativa */
+}
+
+/* --- Cards e Seções Internas --- */
+.card {
+    background-color: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.card h3 {
+    margin-top: 0;
+}
+.card p {
+    color: #666;
+    line-height: 1.5;
+}
+.card .material-icons {
+    font-size: 1em;
+    color: #999;
+}
+
+.patient-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+@media (max-width: 768px) {
+    .patient-sections {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
+
+
+/* --- Grid de Estatísticas --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.stat-card h3 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #3498db;
+    min-height: 1.2em; /* Garante altura mesmo vazio */
+}
+.stat-card p {
+    margin: 5px 0 15px 0;
+    color: #555;
+    font-weight: bold;
+}
+.stat-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ---------------------------------- */
+/* --- ESTILOS DO FORMULÁRIOS GERAIS --- */
+/* ---------------------------------- */
+/* Regras para todos os grupos de campos */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaço entre o rótulo e as opções */
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px; /* Espaço entre as colunas na mesma linha */
+}
+
+/* Estilo para caixas de texto e selects */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+}
+
+/* Campos de texto muito pequenos (como sinais vitais) */
+.form-control-inline {
+    display: inline-block;
+    width: 100px; /* Tamanho padrão, ajustado no HTML quando necessário */
+    padding: 5px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.form-actions {
+    margin-top: 15px;
+    text-align: right; /* Alinha o botão à direita */
+}
+
+/* ---------------------------------- */
+/* --- ESTILOS DE AGRUPAMENTOS --- */
+/* ---------------------------------- */
+.radio-group, .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Espaço entre opções de rádio ou checkbox */
+    flex-wrap: wrap; /* Permite quebrar linha se houver muitas opções */
+}
+.checkbox-group.checkbox-multi-row {
+    gap: 10px 30px; /* Mais espaço horizontal e um pouco de vertical */
+}
+
+.radio-group label, .checkbox-group label {
+    font-weight: normal;
+    color: #555;
+    margin-left: 5px; /* Espaço entre o input e o texto */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.radio-group input[type="radio"], .checkbox-group input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(1.1);
+    margin-right: 5px;
+}
+
+.form-group-half { flex: 1; display: flex; flex-direction: column; gap: 5px; }
+.form-group-third { flex: 0 0 calc(33.33% - 13.33px); display: flex; flex-direction: column; gap: 5px; }
+.form-group-quarter { flex: 0 0 calc(25% - 15px); display: flex; flex-direction: column; gap: 5px; }
+.form-group-three-quarters { flex: 0 0 calc(75% - 5px); display: flex; flex-direction: column; gap: 5px; }
+.form-group-full { flex: 1; display: flex; flex-direction: column; }
+
+/* Estilo para linha de Sinais Vitais (muitos campos inline) */
+.form-inline-group {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px 25px;
+}
+.form-inline-group label {
+    font-weight: normal;
+}
+
+
+/* ---------------------------------- */
+/* --- ESTILOS DE ALARME E NOTA --- */
+/* ---------------------------------- */
+.alarm-box {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+.alarm-warning {
+    background-color: #fef0e7; /* Amarelo/Laranja claro */
+    border: 1px solid #f39c12;
+    color: #e67e22;
+}
+
+.alarm-info {
+    background-color: #e8f4fd; /* Azul claro */
+    border: 1px solid #3498db;
+    color: #2980b9;
+}
+
+.alarm-info-inline {
+    background-color: #e8f4fd;
+    border: 1px solid #3498db;
+    color: #2980b9;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.small-note {
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+    margin: 5px 0 20px 0;
+}
+
+/* --- Responsividade para Formulário Geral --- */
+@media (max-width: 600px) {
+    .form-row, .form-inline-group {
+        flex-direction: column; /* Empilha campos em telas pequenas */
+        gap: 15px;
+    }
+    .form-group-half, .form-group-third, .form-group-quarter, .form-group-three-quarters {
+        flex: 1 1 100%; /* Ocupa 100% da largura */
+    }
+    .form-control-inline {
+        width: 60px; /* Reduz tamanho dos campos inline em mobile */
+    }
+    .form-inline-group label {
+        display: block; /* Garante que cada label/input ocupe sua própria linha */
+    }
+}
